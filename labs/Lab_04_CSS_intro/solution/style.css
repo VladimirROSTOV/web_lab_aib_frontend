@@ -41,6 +41,7 @@ body {
   img {
     width: 250px;
     margin-bottom: 80px;
+    
   }
   
   
@@ -77,3 +78,11 @@ body {
   color: black;
   cursor: pointer;
   }
+
+  img:hover {
+    width: 230px;
+    margin-bottom: 80px;
+    transition: all .3s;
+  }
+
+  
