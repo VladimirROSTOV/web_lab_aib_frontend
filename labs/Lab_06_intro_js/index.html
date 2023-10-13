@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>JS</title>
+</head>
+<body>
+<script>
+    // Задание 1. Работа с переменными
+var apple = 10;
+alert(apple);
+console.log(apple);
+var condition = "RandomString";
+console.log('Good game is ' + condition);
+
+// Задание 2. Магия конкатенации
+var someInt = 42;
+var someString = '100';
+var someBool = true;
+console.log(someInt + someString);
+console.log(someInt + someBool);
+console.log(someString + someBool);
+console.log(someInt + someString + someBool);
+console.log(someString + someBool + someInt);
+console.log(someBool + someString + someInt);
+
+// Задание 3. Работа с массивами
+var randomNumbers = [];
+for (var i = 0; i < 10; i++) {
+    randomNumbers.push(Math.random() * 20 - 10); 
+}
+var filteredNumbers = randomNumbers.filter(function(num) {
+    return num >= 0;
+});
+
+console.log(filteredNumbers);
+
+// Задание 4. Работа с функциями
+function getRandomNumber() {
+    return Math.floor(Math.random() * 100);
+}
+console.log(getRandomNumber());
+
+function multiplyArrayByNumber(arr, num) {
+    return arr.map(function(item) {
+        return item * num;
+    });
+}
+var exampleArray = [1, 2, 3, 4, 5];
+console.log(multiplyArrayByNumber(exampleArray, 10));
+
+var generateRandomWord = function() {
+    var words = ["apple", "banana", "cherry", "date", "fig", "grape"];
+    var randomIndex = Math.floor(Math.random() * words.length);
+    return words[randomIndex];
+};
+console.log(generateRandomWord());
+
+// Работа с объектами
+var emptyObject = {};
+emptyObject.firstName = "John";
+emptyObject.surname = "Doe";
+emptyObject.patronymic = "Smith";
+emptyObject.birthday = "2000-01-01";
+emptyObject.hobby = "Swimming";
+emptyObject.group = "A";
+
+emptyObject.getDetails = function() {
+    var today = new Date();
+    var birthYear = new Date(emptyObject.birthday).getFullYear();
+    var age = today.getFullYear() - birthYear;
+    return emptyObject.firstName + ' ' + emptyObject.surname + ' ' + emptyObject.patronymic + ', ' + birthYear + ', ' + emptyObject.hobby + ', ' + age + ' years old';
+};
+
+alert(emptyObject.getDetails());
+
+var salaries = {
+    "Smith": 50000,
+    "Johnson": 60000,
+    "Brown": 70000,
+    "Davis": 80000,
+    "Miller": 90000,
+    "Wilson": 55000,
+    "Moore": 75000,
+    "Taylor": 72000,
+    "Anderson": 68000,
+    "Thomas": 62000
+};
+
+var totalSalary = 0;
+for (var key in salaries) {
+    totalSalary += salaries[key];
+}
+console.log("Total salary of all employees: " + totalSalary);
+</script>
+</body>
+</html>
