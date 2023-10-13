@@ -77,12 +77,17 @@ body {
   font-weight: bold;
   color: black;
   cursor: pointer;
+  transition: all .3s;
+  }
+
+  img {
+    transition: all .3s;
   }
 
   img:hover {
     width: 230px;
     margin-bottom: 80px;
-    transition: all .3s;
+    /* transition: all .3s; */
   }
 
   
