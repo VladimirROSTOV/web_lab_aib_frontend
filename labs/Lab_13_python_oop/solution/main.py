@@ -5,9 +5,8 @@ import os
 from writer import Writer
 
 def load_data(file_name):
-    path = os.path.join(
-        './../', file_name
-    )
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    path = os.path.join(current_dir, '..', file_name)
 
     with open(path, 'r', encoding='utf-8') as file:
         data = json.load(file)
