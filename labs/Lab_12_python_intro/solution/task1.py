@@ -2,7 +2,7 @@ def count_routes(N, M):
     # Создаем двумерный массив для хранения количества способов
     # достичь каждой клетки доски
     dp = [[0] * (M + 1) for _ in range(N + 1)]
-    
+
     # Инициализируем начальную позицию коня
     dp[1][1] = 1
 
@@ -11,6 +11,7 @@ def count_routes(N, M):
             dp[i][j] = dp[i - 1][j - 2] + dp[i - 2][j - 1]
 
     return dp[N][M]
+
 
 def get_board_size():
     while True:
@@ -27,6 +28,7 @@ def get_board_size():
         except ValueError:
             print("Некорректный ввод. Пожалуйста, введите целое число.")
 
+
 def main():
     # Получаем размеры доски от пользователя
     N, M = get_board_size()
@@ -36,6 +38,7 @@ def main():
 
     # Выводим результат
     print("Количество различных маршрутов:", result)
+
 
 if __name__ == "__main__":
     main()
